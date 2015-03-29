@@ -13,7 +13,7 @@
     "minimum-stability": "stable",
     "require": {
         "php": ">=5.4.0",
-        "timetoogo/pinq": "dev-master"
+        "timetoogo/pinq": "~3.1"
     },
     "require-dev": {
         "phpunit/phpunit": "3.7.*",
