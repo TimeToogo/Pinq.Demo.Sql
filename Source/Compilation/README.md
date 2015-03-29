@@ -181,7 +181,7 @@ More details on the compiled queries can be found [here][6]
 [0]: http://elliotswebsite.com/Pinq/queries-and-expressions.html
 [1]: https://github.com/TimeToogo/Pinq/tree/master/Source/Providers/DSL
 [2]: http://elliotswebsite.com/Pinq/performance.html
-[3]: Preprocessors/README.md
+[3]: Preprocessors/
 [4]: http://en.wikipedia.org/wiki/Visitor_pattern
-[5]: Compilers/README.md
-[6]: Compiled/README.md
+[5]: Compilers/
+[6]: Compiled/
