@@ -91,9 +91,9 @@ Documentation
 This repository as an example of how the PINQ query provider can be implemented.
 For more details you can browse the repository or follow the links below.
 
- - [High Level API](Source/README.md)
- - [Query Providers](Source/Providers/README.md)
- - [Compilation Structure](Source/Compilation/README.md)
-    - [Preprocessors](Source/Compilation/Preprocessors/README.md)
-    - [Compilers](Source/Compilation/Compilers/README.md)
-    - [Compiled Queries](Source/Compilation/Preprocessors/README.md)
+ - [High Level API](Source/)
+ - [Query Providers](Source/Providers/)
+ - [Compilation Structure](Source/Compilation/)
+    - [Preprocessors](Source/Compilation/Preprocessors/)
+    - [Compilers](Source/Compilation/Compilers/)
+    - [Compiled Queries](Source/Compilation/Preprocessors/)
