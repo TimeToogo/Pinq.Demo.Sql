@@ -14,6 +14,10 @@ it to a MySQL database backend. Tables are treated as collections and rows are r
 as associative arrays.
 
 ```php
+use Pinq\Demo\Sql\DB;
+
+$db = new DB($pdo);
+
 $db->table('customers')
     ->where(function ($row) { return $row['age'] <= 50; })
     ->orderByAscending(function ($row) { return $row['firstName']; })
