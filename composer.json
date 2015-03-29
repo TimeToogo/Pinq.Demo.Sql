@@ -1,0 +1,28 @@
+{
+    "name": "timetoogo/pinq.demo.sql",
+    "description": "A documented demo of the PINQ DSL query provider platform",
+    "keywords": ["pinq", "demo", "mysql"],
+    "homepage": "http://www.github.com/TimeToogo/Pinq.Demo.Sql",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Elliot Levin",
+            "email": "elliotlevin@hotmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php": ">=5.4.0",
+        "timetoogo/pinq": "dev-master"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "3.7.*",
+        "phpunit/dbunit": ">=1.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "Pinq\\Demo\\Sql\\": "Source/",
+            "Pinq\\Demo\\Sql\\Tests\\": "Tests/"
+        }
+    }
+}
