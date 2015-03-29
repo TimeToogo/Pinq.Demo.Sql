@@ -14,13 +14,16 @@ matrix:
     - php: hhvm
     - php: hhvm-nightly
 
+env:
+  - DB=mysql
+
 install: composer install --dev --no-interaction
 
 before_script:
   - mysql -e 'create database pinq_demo;'
 
 script:
- - phpunit --configuration "phpunit.xml.dist"
+ - phpunit -v --configuration "phpunit.travis.xml" --testsuite="Entirety"
 
 after_script:
  - php vendor/bin/coveralls -v

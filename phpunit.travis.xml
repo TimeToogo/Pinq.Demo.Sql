@@ -9,13 +9,6 @@
         <testsuite name="Entirety">
             <directory>./Tests/Integration/</directory>
         </testsuite>
-        <testsuite name="Fast">
-            <directory>./Tests/Integration/Compilation/</directory>
-            <directory>./Tests/Integration/Optimization/</directory>
-        </testsuite>
-        <testsuite name="Slow">
-            <directory>./Tests/Integration/Query/</directory>
-        </testsuite>
     </testsuites>
 
     <filter>
@@ -30,7 +23,7 @@
     <php>
         <var name="DB_DSN" value="mysql:dbname=pinq_demo;host=localhost"/>
         <var name="DB_USER" value="root"/>
-        <var name="DB_PASSWD" value="admin"/>
+        <var name="DB_PASSWD" value=""/>
         <var name="DB_DBNAME" value="pinq_demo"/>
     </php>
 </phpunit>
