@@ -1,6 +1,6 @@
 <?php
 
-namespace Pinq\Demo\Sql\Tests\Integration\Query;
+namespace Pinq\Demo\Sql\Tests\Helpers;
 
 use InvalidArgumentException;
 use PHPUnit_Extensions_Database_DataSet_AbstractDataSet;

@@ -3,6 +3,7 @@
 namespace Pinq\Demo\Sql\Tests\Integration\Query;
 
 use PHPUnit_Extensions_Database_DataSet_IDataSet;
+use Pinq\Demo\Sql\Tests\Helpers\ArrayDataSet;
 use Pinq\Demo\Sql\Tests\Helpers\BulkInsertDatabaseOperation;
 use Pinq\Demo\Sql\Tests\RealPdoSqlTestCase;
 
