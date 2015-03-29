@@ -43,12 +43,10 @@ example:
 
 ```php
 $query = $db->table('some_table')
-            ->where(function ($row) { return $row['foo'] < 50);
+            ->where(function ($row) { return $row['foo'] < 50; });
             
 $results = $query->asArray();
-
-$subScopeQuery = $query->where(function ($row) { return $row['foo'] > 20);
-
+$subScopeQuery = $query->where(function ($row) { return $row['foo'] > 20; });
 $filteredResults = $subScopeQuery->asArray();
 ```
 
