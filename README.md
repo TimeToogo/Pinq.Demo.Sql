@@ -9,8 +9,8 @@ and demonstrates the power of the DSL query provider API.
 Overview
 ========
 
-In at <2000 loc, this demo implements a small section of the PINQ query API mapping
-it to a MySql database backend. Tables are treated as collections and rows are represented
+This demo written in under 2 KLOC, implements a small section of the PINQ query API mapping
+it to a MySQL database backend. Tables are treated as collections and rows are represented
 as associative arrays.
 
 ```php

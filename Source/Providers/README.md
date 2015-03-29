@@ -10,7 +10,7 @@ implementation of `Pinq\Queries\ISourceInfo`. For this project a `IRepository`
 represents a database table, so the implementation, [`TableSourceInfo`](TableSourceInfo.php),
 contains the table name and some other fields required for some queries.
 
-In this case, mapping the queries to another dedicated query DSL (MySql), the
+In this case, mapping the queries to another dedicated query DSL (MySQL), the
 package extends specialized query providers under the `Pinq\Providers\DSL` namespace
 which delegates the query compilation to a separate class implementing
 `IQueryCompilerConfiguration`/`IRepositoryCompilerConfiguration` (as we are implementing

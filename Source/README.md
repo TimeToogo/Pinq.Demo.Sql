@@ -6,7 +6,7 @@ bulk of the required API for this library in the
 [`ITraversable`][0] and the [`ICollection`][1] interfaces.
 These interfaces defines the collection methods for querying so the
 it the job of the library to implement the mapping of this to the
-applicable backend, in this case MySql.
+applicable backend, in this case MySQL.
 
 As the collection API is already defined the entry point to this library
 merely is a thin wrapper around the PINQ API:
