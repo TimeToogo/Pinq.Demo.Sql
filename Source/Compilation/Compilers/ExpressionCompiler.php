@@ -262,10 +262,10 @@ class ExpressionCompiler extends O\ExpressionVisitor
     {
         $binaryOperations = [];
         foreach ($expression->getValues() as $value) {
-            $binaryOperations[] = '(' . $this->compileInContext($value) . ' IS NOT NULL)';
+            $binaryOperations[] = $this->compileInContext($value) . ' IS NOT NULL';
         }
 
-        $this->sql .= implode(' AND ', $binaryOperations);
+        $this->sql .= '(' . implode(' AND ', $binaryOperations) . ')';
     }
 
     protected function visitEmpty(O\EmptyExpression $expression)

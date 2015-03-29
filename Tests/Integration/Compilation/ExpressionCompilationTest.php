@@ -92,6 +92,10 @@ class ExpressionCompilationTest extends MockedPdoDemoSqlTestCase
                 '(:p1 IS NOT NULL)'
             ],
             [
+                function () { isset($var, $var); },
+                '(:p1 IS NOT NULL AND :p2 IS NOT NULL)'
+            ],
+            [
                 function () { empty($var); },
                 '(NOT :p1)'
             ],
