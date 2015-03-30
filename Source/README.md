@@ -20,7 +20,7 @@ $results = $db->table('some_table')->where(function)...
 ```
 
 The `DB::table` method returns an instance of [`IRepository`][2] which is
-the counterpart interface of [`ICollection`][1] delegating queries to an
+the counterpart interface of [`ICollection`][1] that delegates queries to an
 underlying query provider.
 
 More details on the PINQ query API can be found [here](http://elliotswebsite.com/Pinq/api.html).
