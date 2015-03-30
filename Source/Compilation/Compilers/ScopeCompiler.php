@@ -88,7 +88,10 @@ class ScopeCompiler extends ScopeCompilerBase
         if (!($query instanceof StaticRange)) {
             throw new PinqDemoSqlException('Range must be a static range class');
         }
-
+        
+        // As the LIMIT clause will always be the last clause in the compiled SELECT
+        // query, we do not need to wrap the SELECT in a derived table as this will
+        // always be evaluated after the previous segment.
         $this->compilation->sql .= ' LIMIT ';
 
         if($query->hasAmount()) {
