@@ -22,7 +22,7 @@ Structural Parameters
 =====================
 
 Due to the large mismatch between a dynamic programming language such as PHP
-and other query DSLs (SQL). There are certain nuances that a completely valid
+and other query DSLs (SQL) there are certain nuances that a completely valid
 PHP code but near impossible to translate into equivalent SQL. For instance
 take a straightforward query:
 
