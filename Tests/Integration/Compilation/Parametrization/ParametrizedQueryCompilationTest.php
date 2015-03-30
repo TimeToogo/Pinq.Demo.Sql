@@ -1,20 +1,14 @@
 <?php
 
-namespace Pinq\Demo\Sql\Tests\Integration\Compilation\Select;
+namespace Pinq\Demo\Sql\Tests\Integration\Compilation\Parametrization;
 
 use Pinq\IRepository;
 
 /**
  * @author Elliot Levin <elliotlevin@hotmail.com>
  */
-class ParametrizedSqlCompilationTest extends SqlSelectQueryCompilationTest
+class ParametrizedSqlCompilationTest extends ParametrizationCompilationTest
 {
-    const CLASS_CONSTANT_PARAMETER = '!!class-constant!!';
-
-    private static $staticFieldParameter = '!!static-field!!';
-
-    private $thisFieldParameter = '!!this-field!!';
-
     public function queryTests()
     {
         $usedVariableParameter = '!!used-variable!!';
@@ -28,7 +22,7 @@ class ParametrizedSqlCompilationTest extends SqlSelectQueryCompilationTest
                 },
                 'SELECT * FROM (SELECT * FROM data) AS data WHERE (data.x <= :p1)',
                 // Bindings
-                [':p1' => '!!used-variable!!']
+                [':p1' => $usedVariableParameter]
             ],
             [
                 'data',
@@ -42,7 +36,7 @@ class ParametrizedSqlCompilationTest extends SqlSelectQueryCompilationTest
                 },
                 'SELECT (data.x <=> :p1) AS y FROM (SELECT * FROM data) AS data',
                 // Bindings
-                [':p1' => '!!this-field!!']
+                [':p1' => $this->thisFieldParameter]
             ],
             [
                 'data',
@@ -52,7 +46,7 @@ class ParametrizedSqlCompilationTest extends SqlSelectQueryCompilationTest
                 },
                 'SELECT * FROM (SELECT * FROM data) AS data ORDER BY CONCAT(:p1, data.x) ASC',
                 // Bindings
-                [':p1' => '!!static-field!!']
+                [':p1' => self::$staticFieldParameter]
             ],
             [
                 'data',
@@ -62,7 +56,7 @@ class ParametrizedSqlCompilationTest extends SqlSelectQueryCompilationTest
                 },
                 'SELECT * FROM (SELECT * FROM data) AS data WHERE (:p1 > data.x)',
                 // Bindings
-                [':p1' => '!!class-constant!!']
+                [':p1' => static::CLASS_CONSTANT_PARAMETER]
             ],
             [
                 'data',
@@ -74,13 +68,8 @@ class ParametrizedSqlCompilationTest extends SqlSelectQueryCompilationTest
                 },
                 'SELECT * FROM (SELECT * FROM data) AS data WHERE ((:p1 <=> :p2) <=> :p3)',
                 // Bindings
-                [':p1' => '!!class-constant!!', ':p2' => '!!used-variable!!', ':p3' => '!!this-field!!']
+                [':p1' => static::CLASS_CONSTANT_PARAMETER, ':p2' => $usedVariableParameter, ':p3' => $this->thisFieldParameter]
             ],
         ];
-    }
-
-    protected function executeTestQueryScope(IRepository $table, array $queries)
-    {
-        return $queries[0]($table);
     }
 }

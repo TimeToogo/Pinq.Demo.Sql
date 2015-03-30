@@ -239,6 +239,50 @@ class NumbersTableQueriesTest extends DataSetSqlQueryTest
         );
     }
 
+    public function testParametrizedQuery()
+    {
+        foreach([1, 2, 3] as $parameter) {
+            $multipliedNumbers = [];
+
+            foreach($this->getDataSetArray()['numbers'] as $row) {
+                $multipliedNumbers[] = ['x' => (float)($row['x'] * $parameter)];
+            }
+
+            $this->assertEquivalentResultSets(
+                $multipliedNumbers,
+                $this->db->table('numbers')
+                    ->select(function ($row) use ($parameter) {
+                        return [
+                            'x' => $row['x'] * $parameter,
+                        ];
+                    })
+                    ->asArray()
+            );
+        }
+    }
+
+    public function testQueryWithStructuralParameters()
+    {
+        foreach(['strlen', 'md5'] as $function) {
+            $mappedNumbers = [];
+
+            foreach($this->getDataSetArray()['numbers'] as $row) {
+                $mappedNumbers[] = ['x' => $function($row['x'])];
+            }
+
+            $this->assertEquivalentResultSets(
+                $mappedNumbers,
+                $this->db->table('numbers')
+                    ->select(function ($row) use ($function) {
+                        return [
+                            'x' => $function($row['x']),
+                        ];
+                    })
+                    ->asArray()
+            );
+        }
+    }
+
     public function testSelectUnnaturalOrderOfSqlOperations()
     {
         $this->assertEquivalentResultSets([
