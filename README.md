@@ -96,4 +96,4 @@ For more details you can browse the repository or follow the links below.
  - [Compilation Structure](Source/Compilation/)
     - [Preprocessors](Source/Compilation/Preprocessors/)
     - [Compilers](Source/Compilation/Compilers/)
-    - [Compiled Queries](Source/Compilation/Preprocessors/)
+    - [Compiled Queries](Source/Compilation/Compiled/)
