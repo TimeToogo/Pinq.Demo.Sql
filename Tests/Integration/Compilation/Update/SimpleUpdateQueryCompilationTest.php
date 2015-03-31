@@ -23,7 +23,6 @@ class SimpleUpdateQueryCompilationTest extends SqlUpdateQueryCompilationTest
                     });
                 },
                 <<<SQL
-
 UPDATE customers RIGHT JOIN (SELECT * FROM customers) AS applicable_customers USING (id)
 SET
 customers.x = 5
