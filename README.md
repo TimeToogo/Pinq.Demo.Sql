@@ -18,7 +18,7 @@ use Pinq\Demo\Sql\DB;
 
 $db = new DB($pdo);
 
-$db->table('customers')
+$results = $db->table('customers')
     ->where(function ($row) { return $row['age'] <= 50; })
     ->orderByAscending(function ($row) { return $row['firstName']; })
     ->thenByAscending(function ($row) { return $row['lastName']; })
@@ -52,8 +52,9 @@ FROM (
 ) AS customers
 ```
 
-As this is just a demo the SQL generation is fairly makeshift and does
-not produce the most efficient code possible.
+This query will be executed against the supplied PDO connection and the 
+result set will be returned. As this is just a demo the SQL generation 
+is fairly makeshift and does not produce the most efficient code possible.
 
 [More examples can be found in the test suite](Tests/Integration)
 
