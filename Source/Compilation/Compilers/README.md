@@ -3,12 +3,12 @@ Compilers
 
 There are four main types of compiler classes.
 
- - Expression compiler - for compiling the query expression trees=
- - Scope compiler - for compiling the query scope
+ - Expression compiler - for compiling the query expression trees.
+ - Scope compiler - for compiling the query scope.
  - Request compiler - for compiling the request part of the query and linking it with the scope.
  - Operation compiler - for compiling the operation part of the query and linking it with the scope.
- 
- These classes all follow the [visitor pattern][1].
+
+These classes all follow the [visitor pattern][1].
 
 Expression Compiler
 ===================
