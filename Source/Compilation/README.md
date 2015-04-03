@@ -11,7 +11,7 @@ powerful and efficient way. The source for this can be viewed [here][1].
 The entry point for this is in the `IQueryCompilerConfiguration`/`IRepositoryCompilerConfiguration`
 (as we are implementing the `IRepository` API the repository interface version is used).
 
-There is no doubt that the process parsing then compiling PHP code is a prohibitively
+There is no doubt that the process of parsing then compiling PHP code is a prohibitively
 expensive operation. PINQ's implementation of query compilation relies heavily on
 the assumption that [a cache will be used][2] when using such features in production.
 For this reason, it is recommended that the final results of compilation are lightweight
