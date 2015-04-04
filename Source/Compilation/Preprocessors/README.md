@@ -91,6 +91,14 @@ be called with the same expression.
  `ParameterCollection` with the appropriate context. You should most likely use the
  `addParameter` method defined in the base `StructuralExpressionProcessor` class which
  will wrap the data in correct class and add it to the parameter collection.
+ The 4th parameter to this method takes an instance of the `IParameterHasher` interface.
+ This is used for for hashing the structural parameters to find a matching compiled query
+ from the cache. For the `DynamicFunctionCallProcessor` the structural parameters are 
+ functions and the `ParameterHasher::functionSignature()` implementation is used.
+ This is important because if the parameter is omitted, the default `ParameterHasher::valueType()`
+ is used and this assumes that is a serializable value. For the case of functions, this
+ is not true as closures cannot be serialized and hence the special implementation is used
+ that instead creates a hash based on the signature of the function.
  - The `inline` method will be called with the resolved parameter values and it should
  update the expression to the concrete expression tree that is able to be compiled.
  To find the correct parameter value, you can use the `getResolvedValue` method defined in

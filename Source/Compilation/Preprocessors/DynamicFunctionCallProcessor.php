@@ -4,6 +4,7 @@ namespace Pinq\Demo\Sql\Compilation\Preprocessors;
 
 use Pinq\Expressions as O;
 use Pinq\Providers\DSL\Compilation\Parameters;
+use Pinq\Providers\DSL\Compilation\Parameters\ParameterHasher;
 use Pinq\Providers\DSL\Compilation\Processors\Structure\StructuralExpressionProcessor;
 use Pinq\Queries;
 use Pinq\Queries\Functions\IFunction;
@@ -49,7 +50,7 @@ class DynamicFunctionCallProcessor extends StructuralExpressionProcessor
         Parameters\ParameterCollection $parameters
     ) {
         /** @var O\InvocationExpression $expression */
-        $this->addParameter($parameters, $function, $expression->getValue());
+        $this->addParameter($parameters, $function, $expression->getValue(), ParameterHasher::functionSignature());
     }
 
     /**
