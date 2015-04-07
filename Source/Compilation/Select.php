@@ -29,7 +29,7 @@ class Select extends Query implements IRequestCompilation
     }
 
     /**
-     * @return Select
+     * @return void
      */
     public function wrapSelectAsDerivedTable()
     {
