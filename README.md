@@ -89,7 +89,7 @@ API Support
 Documentation
 =============
 
-This repository as an example of how the PINQ query provider can be implemented.
+This repository is an example of how the PINQ query provider can be implemented.
 For more details you can browse the repository or follow the links below.
 
  - [High Level API](Source/)
