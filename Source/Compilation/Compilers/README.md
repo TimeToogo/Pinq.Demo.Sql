@@ -19,7 +19,7 @@ expression trees into a SQL string. This class defines a method
 `compile(O\Expression $expression, FunctionBase $functionContext = null)` which will
 compile the supplied expression tree into SQL and return it as a string and append any
 expression parameters under the function context if supplied. There is a significant amount
-of PHP operators and expressions the map very cleanly to a SQL equivalent such as math
+of PHP operators and expressions that map very cleanly to a SQL equivalent such as math
 operators, these are implemented as an associative array which is used to find matching operators. 
 But there are also exceptions, the PHP concatenation operator `.` has no equivalent operator, so
 this is regarded as a special case, the `visitBinaryOperation` will check to see of the operator
