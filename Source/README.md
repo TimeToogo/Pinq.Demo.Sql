@@ -5,7 +5,7 @@ From an API point of view the PINQ library already provides the
 bulk of the required API for this library in the 
 [`ITraversable`][0] and the [`ICollection`][1] interfaces.
 These interfaces defines the collection methods for querying so the
-it the job of the library to implement the mapping of this to the
+job of the library is to implement the mapping of this API to the
 applicable backend, in this case MySQL.
 
 As the collection API is already defined the entry point to this library
